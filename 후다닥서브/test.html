@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .ripple {
+        position: relative;
+        overflow: hidden;
+        background: pink;
+        color: #fff;
+        border-radius: 3px;
+        line-height: 100px;
+        width: 200px;
+        font-size: 14px;
+        text-align: Center;
+      }
+      .ripple:before {
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.2);
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        opacity: 1;
+      }
+      .ripple.active::before,
+      .ripple:hover::before {
+        transition: 0.6s;
+        opacity: 0;
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ripple">click</div>
+  </body>
+</html>
